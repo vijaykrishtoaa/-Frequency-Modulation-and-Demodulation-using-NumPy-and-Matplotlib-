@@ -33,26 +33,27 @@ __Algorithm:__
 6. Plot the Signals: Use Matplotlib to plot the message signal, carrier signal, and modulated signal.
 
 __Programme:__
-import numpy as np
 import matplotlib.pyplot as plt
-Am = 6
-fm = 476
-Ac = 12
-fc = 4760
-fs = 47600
-b = 6.1
-t=np.arange(0, /fm, 1/fs)
+Am = 6.2
+fm = 474
+Ac = 12.4
+fc = 4740
+fs = 47400
+t=np.arange(0, 3/fm, 1/fs)
 m = Am*np.cos(2*3.14*fm*t)
 plt.subplot(3,1,1)
 plt.plot(t,m)
-c= Ac*np.cos(2*3.14*fc*t)
+c = Ac*np.cos (2*3.14*fc*t)
 plt.subplot(3,1,2)
 plt.plot(t,c)
-s=Ac*np.cos(2*3.14*fc*t+b*np.sin(2*3.14*fm*t))
+s1=(Ac+m)*np.cos(2*3.14*fc*t)
+s2=(Ac-m)*np.cos(2*3.14*fc*t)
+s=s1-s2
 plt.subplot(3,1,3)
 plt.plot(t,s)
 __Output:__
-![WhatsApp Image 2025-11-26 at 19 44 47_cccc86d6](https://github.com/user-attachments/assets/d626b4d0-09b1-4a4e-b4ac-00ba1e60ad25)
+![WhatsApp Image 2025-11-26 at 19 48 57_4435bc49](https://github.com/user-attachments/assets/72e1835c-8d68-49d2-9e7d-f99ae8ef3021)
+
 
 __Result:__
-The message, carrier, amplitude modulation signal will be displayed in separate plots using python.
+the message signal,carrier signal and frequency signal will be displayed in separate plots.The modulated signal will show frequency variations.
